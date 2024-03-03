@@ -8,9 +8,14 @@ day=$(echo $row | cut -f3)
 yes_fc_tmp=$(tail -2 rx_poc.log | head -1 | cut -f5)
 tod_ob_tmp=$(tail -1 rx_poc.log | cut -f4)
 accuracy=$(($tod_ob_tmp - $yes_fc_tmp))
+echo $accuracy
 abs_accuracy=${accuracy#-} # get the absolute value of the accuracy number
 
-if [ $abs_accuracy = 1 ]
+if [ $abs_accuracy = 0 ]
+then
+    label='spot on'
+elif
+    [ $abs_accuracy = 1 ]
 then
     label='excellent'
 elif
