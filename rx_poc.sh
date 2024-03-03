@@ -1,9 +1,6 @@
 #!/bin/bash
-
-city=Casablanca
-
-obs_tmp=$(cat report | ggrep -oP "\d*(?=(\((\d+)\))?\s°C)" | sed "1q;d")
-fc_tmp=$(cat report | ggrep -oP "\d*(?=(\((\d+)\))?\s°C)" | sed "3q;d")
+obs_tmp=$(cat /Users/sanifred/work/code/projects/weather_report/report | /opt/homebrew/bin/ggrep -oP "\d*(?=(\((\d+)\))?\s°C)" | sed "1q;d")
+fc_tmp=$(cat /Users/sanifred/work/code/projects/weather_report/report | /opt/homebrew/bin/ggrep -oP "\d*(?=(\((\d+)\))?\s°C)" | sed "3q;d")
 hour=$(TZ=Morroco/Casablanca date +%r)
 day=$(TZ=Morroco/Casablanca date +%d)
 month=$(TZ=Morroco/Casablanca date +%m)
